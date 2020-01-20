@@ -3,7 +3,7 @@ package com.workshopapi.Models;
 public class Film {
     //variables
     String title;
-    int episode;
+    int episode_id;
     String opening_crawl;
     String director;
     String producer;
@@ -32,12 +32,12 @@ public class Film {
         this.title = title;
     }
 
-    public int getEpisode() {
-        return episode;
+    public int getEpisode_id() {
+        return episode_id;
     }
 
-    public void setEpisode(int episode) {
-        this.episode = episode;
+    public void setEpisode_id(int episode_id) {
+        this.episode_id = episode_id;
     }
 
     public String getOpening_crawl() {

@@ -32,7 +32,7 @@ public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.title.setText(filmList.get(position).getTitle());
-        holder.episode_id.setText(String.valueOf(filmList.get(position).getEpisode()));
+        holder.episode_id.setText(String.valueOf(filmList.get(position).getEpisode_id()));
         holder.opening.setText(filmList.get(position).getOpening_crawl());
         holder.director.setText(filmList.get(position).getDirector());
         holder.producer.setText(filmList.get(position).getProducer());
