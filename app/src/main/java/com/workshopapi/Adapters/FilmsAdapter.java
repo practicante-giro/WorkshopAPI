@@ -7,11 +7,8 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.workshopapi.Models.Film;
 import com.workshopapi.R;
-
-import java.security.acl.Group;
 import java.util.List;
 
 public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.ViewHolder> {
@@ -48,7 +45,8 @@ public class FilmsAdapter extends RecyclerView.Adapter<FilmsAdapter.ViewHolder> 
 
     @Override
     public int getItemCount() {
-        return 0;
+
+        return filmList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
