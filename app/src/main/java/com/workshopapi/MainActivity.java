@@ -1,10 +1,16 @@
 package com.workshopapi;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -14,7 +20,6 @@ import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
 import com.workshopapi.Adapters.FilmsAdapter;
 import com.workshopapi.Models.Film;
-
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -41,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
         recyclerView.setLayoutManager(linearLayoutManager);
+
         //adapter = new FilmsAdapter(this,filmList);
         //recyclerView.setAdapter(adapter);
 
@@ -52,8 +58,7 @@ public class MainActivity extends AppCompatActivity {
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                Toast.makeText(getApplicationContext(),"No se pudo,",
-                        Toast.LENGTH_SHORT).show();
+                Log.e("No se pudo porque",e.toString());
             }
 
             @Override
@@ -75,15 +80,13 @@ public class MainActivity extends AppCompatActivity {
 
                     }
                 });
-
-
-
-
-
             }
         });
 
         update();
+
+
+
 
     }
 
